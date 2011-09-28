@@ -68,8 +68,12 @@ where token is the subscribers personal security token
 
 Enjoy
 
-TODO:
+##TODO:
+
  # add some basic content for new pages
+
  # add unsubscribe form to allow users to provide their email address for un-subscription.
- # convert al views to haml
+
+ # convert all views to haml
+
  # add rspec tests
