@@ -1,5 +1,7 @@
 # Refinery CMS Newsletters 
 
+
+
 Simple newsletters engine for [Refinery CMS](http://refinerycms.com). It does support campaigns, unsubscribe and simple statistic.
 It is based on the refinerycms-newsletters engine by paxer (http://github.com/paxer/refinerycms-newsletters).
 However this engine the newsletter subscribers are not system users but are stored in a dedicated table and can be managed
@@ -16,8 +18,7 @@ Options:
 ## Requirements
 
 Refinery CMS version 1.0.x or above, tested with refinerycms 1.0.8.
-
-The 'haml' gem, since some views are in HAML.
+the HAMl gem since some views are in haml.
 
 ## Installation
 
@@ -58,7 +59,12 @@ to make required changes, like changing the :from email address. that is used to
 User have to click the activation link provided to them in the email. The security token in the link will
 authorize the subscriber and activate the subscription.
 
-User can unsubscribe using the following link which you could include in every newsletter.
+User can unsubscribe using the following link which you could include in every newsletter:
+
+    unsubscribe_newsletter_subscription(@subscriber.token)
+
+where token is the subscribers personal security token
+
 
 Enjoy
 
