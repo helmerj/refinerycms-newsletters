@@ -1,11 +1,22 @@
+<% content_for :head do -%>
+  <%= stylesheet_link_tag 'newsletter' %>
+<% end -%>
 <% content_for :body_content_left do %>
-  <ul id="newsletters">
-    <% @newsletters.each do |newsletter| %>
-      <li>
-        <%= link_to newsletter.title, newsletter_url(newsletter) %>
-      </li>
+  <div id="newsletters">
+    <%- if @newsletters.present? %>
+        <% @newsletters.each do |newsletter| %>
+          <div id="newsletter">
+            <h3><%= newsletter.title %> </h3>
+            <p class="subtitle"><%= newsletter.created_at.strftime("%Y-%m-%d") %></p>
+            <p><%=raw newsletter.email_body.truncate(500) %>
+            <%= link_to t('read_more'), newsletter_url(newsletter) %></p>
+          </div>
+
+        <% end %>
+    <% else %>
+        <p><%= t('sorry_no_results') %></p>
     <% end %>
-  </ul>
+  </div>
 <% end %>
 
 <%= render :partial => "/shared/content_page" %>

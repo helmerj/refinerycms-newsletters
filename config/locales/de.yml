@@ -1,0 +1,51 @@
+de:
+  email_uniqueness_error: wurde bereits angemeldet.
+  confirm_subscription: Abonnement bestätigen
+  confirmation_subject: Abonnementbestätigung für den webnow Newsletter.
+  send: Abschicken
+  read_more: weiter lesen
+  sorry_no_results: Es wurden noch keine Newsletter veröffentlicht.
+  recent_newsletters: Neusten Newsletter
+  shared:
+    admin:
+      image_picker:
+        image: Bild
+  plugins:
+    newsletters:
+      title: Newsletter
+  admin:
+    newsletters:
+      index:
+        title: Newsletter
+        create_new: Newsletter hinzufügen
+        reorder: Newsletter sortieren
+        reorder_done: Newsletter sortieren beenden
+        sorry_no_results: Entschuldigung! Es konnte nichts gefunden werden.
+        no_items_yet: Noch keine Newsletter vorhanden! Klicken Sie "Newsletter hinzufügen" um Ihren ersten Newsletter zu erstellen.
+        view_subscribers: Abonnementen ansehen
+      newsletter:
+        view_live_html: Sehen Sie sich diesen Newsletter live an<br/><strong>(öffnet in einem neuen Fenster)</strong>
+        edit: Newsletter editieren
+        delete: Newsletter löschen
+    newsletter_subscriptions:
+      index:
+        title: Newsletter Anmeldungen
+        reorder: Anmeldungen sortieren
+        reorder_done: Das Sortieren der Anmeldungen beenden
+        sorry_no_results: Entschuldigung! Es konnte nichts gefunden werden.
+        no_items_yet: Noch keine Anmeldungen vorhanden!
+        back_to_newsletters: Zurück zu den Newslettern
+      newsletter_subscription:
+        view_live_html: Sehen Sie sich diese Anmeldung live an<br/><strong>(öffnet in einem neuen Fenster)</strong>
+        edit: Newsletter editieren
+        delete: Newsletter löschen
+  newsletters:
+    show:
+      other: Andere Newsletter
+  newsletter_subscriptions:
+    new:
+      title: Newsletter Anmeldung
+      subscriber_email: Ihre E-Mailadresse
+      send: Anmelden
+    show:
+      other: Andere Anmeldungen

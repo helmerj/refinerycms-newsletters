@@ -1,11 +1,10 @@
 <li class='clearfix record <%= cycle("on", "on-hover") %>' id="<%= dom_id(newsletter) -%>">
   <span class='title'>
     <%= newsletter.title %>
-    <span class="preview">&nbsp;</span>
+    <span class="preview"><%= pluralize(newsletter.emails_sent, 'email') %> sent at <%= newsletter.updated_at.strftime("%d/%m/%Y")%></span>
   </span>
 
   <span class='actions' style="width:270px">
-      <%= newsletter.emails_sent %> emails sent at <%= newsletter.updated_at.strftime("%d/%m/%Y")%>
     <%= link_to refinery_icon_tag("application_go.png"), newsletter_url(newsletter),
         :title => t('.view_live_html'),
         :target => "_blank" %>

@@ -12,13 +12,25 @@ module Refinery
         ActionController::Base.send :include, NewsletterHelper
       end
 
+      initializer 'newsletter_subscription.helper' do |app|
+        ActionView::Base.send :include, NewsletterSubscriptionHelper
+        ActionController::Base.send :include, NewsletterSubscriptionHelper
+      end
+
       config.after_initialize do
         Refinery::Plugin.register do |plugin|
           plugin.name = "newsletters"
           plugin.activity = {
             :class => Newsletter}
         end
+
+        Refinery::Plugin.register do |plugin|
+          plugin.name = "newsletter_subscriptions"
+          plugin.activity = {
+            :class => NewsletterSubscription}
+        end
       end
     end
   end
 end
+

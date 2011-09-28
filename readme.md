@@ -1,41 +1,42 @@
 # Refinery CMS Newsletters 
 
-Simple newsletters engine for [Refinery CMS](http://refinerycms.com). It supports campaigns, unsubscribe and simple statistic.
-This solution could be useful if you don't have a huge amount of subscribers but only a few tens or so.
-If you have hundreds or more subscribers you need consider of using a delayed job instead.
+Simple newsletters engine for [Refinery CMS](http://refinerycms.com). It does support campaigns, unsubscribe and simple statistic.
+It is based on the refinerycms-newsletters engine by paxer (http://github.com/paxer/refinerycms-newsletters).
+In this engine the newsltter subscribers are not system users.
 
-Refinery CMS Newsletters supports Rails 3.0.x 
+It uses a background mailing system so it should easily cope with larger numbers of subscribers.
+
+
+Refinery CMS Newsletters supports Rails 3.0.x (tested on 3.1.10)
 
 Options:
 
 ## Requirements
 
-Refinery CMS version 0.9.9.1 or above.
+Refinery CMS version 1.0.x or above.
 
-## Install
+## Installation
 
-Open up your ``Gemfile`` and add at the bottom this line:
+Edit your ``Gemfile`` and add the follwoing line at the bottom of the file:
 
-    gem 'refinerycms-newsletters', '1.0', ':git => 'git://github.com/paxer/refinerycms-newsletters.git'
+    gem 'refinerycms-newsletters', '~>1.0', ':git => 'git://github.com/helmerj/refinerycms-newsletters.git'
 
-or copy it under your Rails.root/vendor/engines/newsletters then
+or clone the engine in your ``Rails.root/vendor/engine`` directory:
 
-	gem 'refinerycms-newsletters', '1.0', :path => 'vendor/engines'
+    git clone git://github.com/helmerj/refinerycms-newsletters.git
 
-Now, run ``bundle install``
+and add the following line to the bottom of your ``Gemfile`` instead:
 
-Next, to install the newsletters plugin run:
+	gem 'refinerycms-newsletters', '~>1.0', :path => 'vendor/engines'
+
+After including the new engine, run ``bundle install``
+
+In order to install the newsletters plugin into your existing refinerycms application run:
 
     rails generate refinerycms_newsletters
 
-Finally migrate your database and you're done.
+Last but not least migrate your database:
 
     rake db:migrate
 
-## How to use
-In admin panel Users section for each user will be available new checkbox "Newsletter subscription", all users with "checked" will receive newsletters.
-
-To unsubscribe add to you newsletter template next link  http://yousiteurl.com/unsubscribe?email=user@email.com 
-
-
-Have a fun!
+Enjoy

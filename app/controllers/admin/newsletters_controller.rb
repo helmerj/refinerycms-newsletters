@@ -17,9 +17,15 @@ module Admin
         if @newsletter
 
           if @newsletter.valid?
-            # this actually should be a delayed job, but as far as client do not expect a huge amount of subscribers
-            # and don't want to pay additional cost for Worker on Heroku we will leave it like this for now
-            send_newsletter(@newsletter)
+            number_of_sent_email = 0
+            users = NewsletterSubscription.where("subscribed != ?", "").where(:unsubscribed => nil)
+            users.each do |user|
+              NewsletterMailer.newsletter_email(user,@newsletter).deliver
+              number_of_sent_email += 1
+              n = Newsletter.find(@newsletter)
+              n.update_attributes(:emails_sent => number_of_sent_email)
+            end
+
           else
             return render :action => 'new'
           end

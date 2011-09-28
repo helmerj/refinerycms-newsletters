@@ -11,9 +11,9 @@
   
   <div class='field'>
     <%= f.label :email_from -%>
-    <%= f.text_field :email_from -%>
+    <%= f.text_field :email_from, :value => "newsletter@web-now.de" -%>
   </div>
-  
+
   <div class='field'>
     <div id='page-tabs' class='clearfix ui-tabs ui-widget ui-widget-content ui-corner-all'>
       <ul id='page_parts'>
@@ -36,8 +36,8 @@
     <div class="field">
       <label>Subscribers</label>
       <select name="subscribers" id="subscribers_emails" multiple="multiple" size="10" style="width:960px; font-size:medium;" disabled="true">
-      <% get_subscribers.each do |e| %>
-            <option value="<%= e.email %>"><%= e.email %></option>
+      <% NewsletterSubscription.where("subscribed != ?", "").where(:unsubscribed => nil).each do |e| %>
+            <option value="<%= e.subscriber_email %>"><%= e.subscriber_email %></option>
       <% end %>
           </select>
     </div>

@@ -1,4 +1,11 @@
 en:
+  email_uniqueness_error: has already been used to subscribe.
+  confirm_subscription: Confirm Subscription
+  confirmation_subject: confirm subscription for the webnow newsletter
+  send: Send
+  read_more: read more...
+  sorry_no_results: No newsletters have been published yet.
+  recent_newsletters: Recent Newsletters
   shared:
     admin:
       image_picker:
@@ -15,10 +22,28 @@ en:
         reorder_done: Done Reordering Newsletters
         sorry_no_results: Sorry! There are no results found.
         no_items_yet: There are no Newsletters yet. Click "Add New Newsletter" to add your first newsletter.
+        view_subscribers: View Subscribers
       newsletter:
         view_live_html: View this newsletter live <br/><em>(opens in a new window)</em>
         edit: Edit this newsletter
         delete: Remove this newsletter forever
+    newsletter_subscriptions:
+      index:
+        title: Newsletter Subscriptions
+        reorder: Sort Subscriptions
+        reorder_done: Dopne Reordering Subscriptions
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no subscriptions yet.
+        back_to_newsletters: Back to newsletters
+      newsletter_subscription:
+        delete: Remove this subscription forever
   newsletters:
     show:
       other: Other Newsletters
+  newsletter_subscriptions:
+    new:
+      title: Newsletter Subscription
+      subscriber_email: Your Email Address
+      send: Subscribe
+    show:
+      other: Other Subscriptions
