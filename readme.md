@@ -16,7 +16,8 @@ Options:
 ## Requirements
 
 Refinery CMS version 1.0.x or above, tested with refinerycms 1.0.8.
-the HAMl gem since some views are in haml.
+
+The 'haml' gem, since some views are in HAML.
 
 ## Installation
 
