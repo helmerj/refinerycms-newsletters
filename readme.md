@@ -11,7 +11,7 @@ refinerycms-newsletters engine by paxer (http://github.com/paxer/refinerycms-new
 
 3.  Newsletters are send out as HTML emails:
     -   rendered as raw HTML, so all features of the HTML Editor are supported (In case you include customs styles as classes, add them to the style section in the mailer template's header)
-    -   relative image paths are converted to remote HTML call to the server, you can include images into your HTML newsletters
+    -   relative image paths are converted to remote HTML calls to the server, you can include images into your HTML newsletters
 
 4.  simple statistics
 
