@@ -72,6 +72,8 @@ Enjoy
 
  # add some basic content for new pages
 
+ # add a draft mode to work on newsletters and not send them immediately
+
  # add unsubscribe form to allow users to provide their email address for un-subscription.
 
  # convert all views to haml
