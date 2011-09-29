@@ -1,0 +1,46 @@
+= form_for [:admin, @newsletter] do |f|
+  = render :partial => "/shared/admin/error_messages", :locals => { |
+      :object => @newsletter,                                       |
+      :include_object_name => true                                  |
+    }                                                               |
+  .field
+    = f.label :title
+    = f.text_field :title, :class => 'larger widest'
+  .field
+    = f.label :email_from
+    = f.text_field :email_from, :value => "newsletter@web-now.de"
+  .field
+    #page-tabs.clearfix.ui-tabs.ui-widget.ui-widget-content.ui-corner-all
+      %ul#page_parts
+        - [:email_body].each_with_index do |part, part_index|
+          <li class='ui-state-default#{' ui-state-active' if part_index == 0}'>
+          \#{link_to part.to_s.titleize, "##{part}"}
+      #page_part_editors
+        - [:email_body].each do |part|
+          .page_part{:id => part}
+            = f.text_area part, :rows => 20, :class => 'wymeditor widest'
+  .field
+    %label
+      = t('draft')
+    = f.check_box :draft, :default => false
+  .field
+    .field
+      %label
+        = t('subscribers')
+      %select#subscribers_emails{:disabled => "true", :multiple => "multiple", :name => "subscribers", :size => "10", :style => "width:960px; font-size:medium;"}
+        - NewsletterSubscription.where("subscribed != ?", "").where(:unsubscribed => nil).each do |e|
+          %option{:value => e.subscriber_email}= e.subscriber_email
+    By clicking Save the current newsletter will be sent to subscribers, this could take some time, please be patience.
+  = render :partial => "/shared/admin/form_actions",                                                     |
+    :locals => {                                                                                         |
+      :f => f,                                                                                           |
+      :continue_editing => false,                                                                        |
+      :delete_title => t('delete', :scope => 'admin.newsletters.newsletter'),                            |
+      :delete_confirmation => t('message', :scope => 'shared.admin.delete', :title => @newsletter.title) |
+    }                                                                                                    |
+- content_for :javascripts do
+  :javascript
+    $(document).ready(function(){
+      page_options.init(false, '', '');
+    });
+  

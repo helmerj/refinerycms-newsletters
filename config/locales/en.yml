@@ -6,6 +6,8 @@ en:
   read_more: read more...
   sorry_no_results: No newsletters have been published yet.
   recent_newsletters: Recent Newsletters
+  draft: Draft
+  subscribers: Susbscribers
   shared:
     admin:
       image_picker:

@@ -1,0 +1,19 @@
+#records
+  - if searching?
+    %h2= t('results_for', :scope => 'shared.admin.search', :query => params[:search])
+  - if @newsletter_subscriptions.any?
+    .pagination_container
+      = render :partial => 'newsletter_subscriptions'
+  - else
+    %p
+      - unless searching?
+        %strong
+          = t('.no_items_yet')
+      - else
+        = t('no_results', :scope => 'shared.admin.search')
+#actions
+  %ul
+
+    %li
+      = link_to t('.back_to_newsletters'), admin_newsletters_url, :class => "add_icon"                                      |
+

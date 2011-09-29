@@ -1,0 +1,16 @@
+- content_for :head do
+  = stylesheet_link_tag 'newsletter'
+- content_for :body_content_title do
+  = raw "<h1 class='hide'>M</h1>"
+- content_for :body_content_left do
+  #newsletters
+    #newsletter
+      %h2= raw @newsletter.title
+      %p.subtitle= @newsletter.created_at.strftime("%Y-%m-%d")
+      = raw @newsletter.email_body
+- content_for :body_content_right do
+  %h3= t('recent_newsletters')
+  %ul.recent_newsletters
+    - @all_newsletters.each do |newsletter|
+      %li= link_to newsletter.title, newsletter_url(newsletter)
+= render :partial => "/shared/content_page"

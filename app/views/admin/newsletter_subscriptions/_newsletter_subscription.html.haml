@@ -1,0 +1,11 @@
+%li{:class => "clearfix record #{cycle("on", "on-hover")}", :id => dom_id(newsletter_subscription)}
+  %span.title
+    = newsletter_subscription.subscriber_email
+    %span.preview
+      Subscribed on: #{newsletter_subscription.subscribed.to_date.strftime("%Y-%m-%d")}
+  %span.actions{:style => "width:270px"}
+    = link_to refinery_icon_tag("delete.png"), admin_newsletter_subscription_path(newsletter_subscription),          |
+      :class => "cancel confirm-delete",                                                                             |
+      :title => t('.delete'),                                                                                        |
+      :confirm => t('message', :scope => 'shared.admin.delete', :title => newsletter_subscription.subscriber_email), |
+      :method => :delete                                                                                             |
