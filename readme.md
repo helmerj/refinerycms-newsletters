@@ -25,8 +25,9 @@ Refinery CMS Newsletters supports Rails 3.0.x (tested on 3.1.10)
 
 ## Requirements
 
-Refinery CMS version 1.0.x or above, tested with refinerycms 1.0.8.
-the HAMl gem since some views are in haml.
+1.  Refinery CMS version 1.0.x or above, tested with refinerycms 1.0.8.
+
+2.  the HAML gem since some views are in haml.
 
 ## Installation
 
