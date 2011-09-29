@@ -1,17 +1,31 @@
 # Refinery CMS Newsletters 
 
-Simple newsletters engine for [Refinery CMS](http://refinerycms.com) from [webnow](http://web-now.de). It does support campaigns, unsubscribe and simple statistic.
-It is based on the refinerycms-newsletters engine by paxer (http://github.com/paxer/refinerycms-newsletters).
-However this engine the newsletter subscribers are not system users but are stored in a dedicated table and can be managed
-in the refinerycms admin section separately..
+Simple newsletters engine for [Refinery CMS](http://refinerycms.com) from [webnow](http://web-now.de). It is based on the
+refinerycms-newsletters engine by paxer (http://github.com/paxer/refinerycms-newsletters).
 
-It does not use a background mailing system so it might have difficulties coping with larger numbers of subscribers (untested).
+## Features
+
+1.  HTML newsletter campaigns
+
+2.  Newsletter subscribers are not system users. The subscribers are stored in a dedicated table and can be managed in the refinerycms admin section separately.
+
+3.  Newsletters are send out as HTML emails:
+    -   rendered as raw HTML, so all features of the HTML Editor are supported (In case you include customs styles as classes, add them to the style section in the mailer template's header)
+    -   relative image paths are converted to remote HTML call to the server, you can include images into your HTML newsletters
+
+4.  simple statistics
+
+5.  double-opt-in subscription
+
+6.  one-click unsubscription
+
+
+The engine does not use a background mailing system so it most likely will have difficulties coping with larger numbers of subscribers (untested).
 Use a local sendmail installation on your production server, or out-source the sending of newsletter to a background service.
 
 
 Refinery CMS Newsletters supports Rails 3.0.x (tested on 3.1.10)
 
-Options:
 
 ## Requirements
 
@@ -68,12 +82,8 @@ Enjoy
 
 ##TODO:
 
- # add some basic content for new pages
+-   add some basic content for new pages
 
- # add a draft mode to work on newsletters and not send them immediately
+-   add unsubscribe form to allow users to provide their email address for un-subscription.
 
- # add unsubscribe form to allow users to provide their email address for un-subscription.
-
- # convert all views to haml
-
- # add rspec tests
+-   add rspec tests
