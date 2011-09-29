@@ -60,14 +60,11 @@ Edit the
 
     Rails.root/vendor/engines/newsletter/app/mailers/newsletter_subscription_mailer.rb
 
-file to make required changes:
+and edit the string replacement call for transforming relative image path to remote http calls to link to your server
 
+    gsub('src="/system/images','src="http://SERVER.YOUR.DOMAIN/system/images')}
 
-1.  edit the string replacement call for transforming relative image path to remote http calls to link to your server
-
-        gsub('src="/system/images','src="http://SERVER.YOUR.DOMAIN/system/images')}
-
-    (Will move that one to Settings)
+(Will move that one to Settings)
 
 Edit the
 
