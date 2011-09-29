@@ -15,13 +15,9 @@ refinerycms-newsletters engine by paxer (http://github.com/paxer/refinerycms-new
 
 4.  simple statistics
 
-5.  double-opt-in subscription
+5.  double-opt-in subscription using an activation email including a personalized security token
 
-6.  one-click unsubscription
-
-
-The engine does not use a background mailing system so it most likely will have difficulties coping with larger numbers of subscribers (untested).
-Use a local sendmail installation on your production server, or out-source the sending of newsletter to a background service.
+6.  one-click un-subscription using the personal security token
 
 
 Refinery CMS Newsletters supports Rails 3.0.x (tested on 3.1.10)
@@ -60,15 +56,29 @@ Last but not least migrate your database:
 
 This will create all the necessary tables and initial refinerycms pages in English and German.
 
+Edit the
+
+    Rails.root/vendor/engines/newsletter/app/mailers/newsletter_subscription_mailer.rb
+
+file to make required changes:
+
+1.  change the
+
+        :from email address
+
+     which is used when sending the activation email.
+
+2.  edit the string replacement call for transforming relative image path to remote http calls to link to your server
+
+        gsub('src="/system/images','src="http://SERVER.YOUR.DOMAIN/system/images')}
+
 ## Use
 
 To subscribe to the newsletter service, link to the sign-up form:
 
     /newsletter_subscription
 
-Edit the Rails.root/vendor/engines/newsletter/app/mailers/newsletter_subscription_mailer.rb file
-to make required changes, like changing the :from email address. that is used to send the activation email.
-User have to click the activation link provided to them in the email. The security token in the link will
+Users will have to click the activation link provided to them in the email. The security token in the link will
 authorize the subscriber and activate the subscription.
 
 User can unsubscribe using the following link which you could include in every newsletter:
@@ -79,6 +89,11 @@ where token is the subscribers personal security token
 
 
 Enjoy
+
+## NOTES:
+
+The engine does not use a background mailing system so it most likely will have difficulties coping with larger numbers of subscribers (untested).
+Use a local sendmail installation on your production server, or out-source the sending of newsletter to a background service.
 
 ##TODO:
 
