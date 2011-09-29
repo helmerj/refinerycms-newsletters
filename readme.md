@@ -62,15 +62,18 @@ Edit the
 
 file to make required changes:
 
-1.  change the
 
-        :from email address
-
-     which is used when sending the activation email.
-
-2.  edit the string replacement call for transforming relative image path to remote http calls to link to your server
+1.  edit the string replacement call for transforming relative image path to remote http calls to link to your server
 
         gsub('src="/system/images','src="http://SERVER.YOUR.DOMAIN/system/images')}
+
+    (Will move that one to Settings)
+
+Edit the
+
+    Rails.root/vendor/engines/newsletter/app/views/admin/newsletters/_form.html.haml
+
+to change the default email address used when creating a new newsletter. (Will move that one to Settings)
 
 ## Use
 
