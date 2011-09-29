@@ -1,8 +1,6 @@
 # Refinery CMS Newsletters 
 
-
-
-Simple newsletters engine for [Refinery CMS](http://refinerycms.com). It does support campaigns, unsubscribe and simple statistic.
+Simple newsletters engine for [Refinery CMS](http://refinerycms.com) from [webnow](http://web-now.de). It does support campaigns, unsubscribe and simple statistic.
 It is based on the refinerycms-newsletters engine by paxer (http://github.com/paxer/refinerycms-newsletters).
 However this engine the newsletter subscribers are not system users but are stored in a dedicated table and can be managed
 in the refinerycms admin section separately..
