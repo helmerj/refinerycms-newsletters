@@ -56,21 +56,8 @@ Last but not least migrate your database:
 
 This will create all the necessary tables and initial refinerycms pages in English and German.
 
-Edit the
-
-    Rails.root/vendor/engines/newsletter/app/mailers/newsletter_subscription_mailer.rb
-
-and edit the string replacement call for transforming relative image path to remote http calls to link to your server
-
-    gsub('src="/system/images','src="http://SERVER.YOUR.DOMAIN/system/images')}
-
-(Will move that one to Settings)
-
-Edit the
-
-    Rails.root/vendor/engines/newsletter/app/views/admin/newsletters/_form.html.haml
-
-to change the default email address used when creating a new newsletter. (Will move that one to Settings)
+Edit the "Newsletter Return Email Address" in der admin > Settings section to change the default email address
+which is used to initialize the return email address used in the create newsletter form.
 
 ## Use
 

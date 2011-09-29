@@ -8,7 +8,7 @@
     = f.text_field :title, :class => 'larger widest'
   .field
     = f.label :email_from
-    = f.text_field :email_from, :value => "newsletter@web-now.de"
+    = f.text_field :email_from, :value => RefinerySetting[:newsletter_return_email_address]
   .field
     #page-tabs.clearfix.ui-tabs.ui-widget.ui-widget-content.ui-corner-all
       %ul#page_parts

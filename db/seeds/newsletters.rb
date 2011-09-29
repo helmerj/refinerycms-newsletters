@@ -20,3 +20,10 @@ Thread.current[:globalize_locale] = 'en'
 Page.default_parts.each do |default_page_part|
   page.parts.create(:title => default_page_part, :body => nil)
 end
+
+
+newsletter_return_email_address = ::RefinerySetting.create({
+    :name => "newsletter_return_email_address",
+    :value => "",
+    :form_value => "text_area"
+  })
