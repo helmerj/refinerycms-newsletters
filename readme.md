@@ -50,16 +50,22 @@ This will create all the necessary tables and initial refinerycms pages in Engli
 
 ## Use
 
-To subscribe to the newsletter service, link to the sign-up form:
+Edit the Rails.root/vendor/engines/newsletter/app/mailers/newsletter_subscription_mailer.rb file
+to make required changes:
+
+1. change the :from email address, which is used to send the activation email.
+2. change the gsub call which transform relative image links to remote http calls, to include your webserver name:
+	mobile.web-now.de => www.your-domain.com
+
+To let users subscribe to your newsletter service, link to the sign-up form:
 
     /newsletter_subscription
 
-Edit the Rails.root/vendor/engines/newsletter/app/mailers/newsletter_subscription_mailer.rb file
-to make required changes, like changing the :from email address. that is used to send the activation email.
-User have to click the activation link provided to them in the email. The security token in the link will
-authorize the subscriber and activate the subscription.
+The newsletter engine uses a two-opt-in principle. Upon sign-up an activation email including a personal activation 
+token is sent to the email address provided. Users will have to click the activation link in order to finalize the subscription process. 
+The security token in the link will authorize the subscriber and activate the subscription.
 
-User can unsubscribe using the following link which you could include in every newsletter:
+Users can unsubscribe using the following link which you could include in every newsletter:
 
     unsubscribe_newsletter_subscription(@subscriber.token)
 
@@ -71,8 +77,6 @@ Enjoy
 ##TODO:
 
  # add some basic content for new pages
-
- # add a draft mode to work on newsletters and not send them immediately
 
  # add unsubscribe form to allow users to provide their email address for un-subscription.
 

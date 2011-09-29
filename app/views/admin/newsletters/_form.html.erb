@@ -33,6 +33,11 @@
       </div>
     </div>
   </div>
+  <div class="field">
+      <label>Draft</label>
+      <%= f.check_box :draft, :default => false %>
+      </div>
+    <div class="field">
     <div class="field">
       <label>Subscribers</label>
       <select name="subscribers" id="subscribers_emails" multiple="multiple" size="10" style="width:960px; font-size:medium;" disabled="true">
@@ -42,7 +47,6 @@
           </select>
     </div>
 
-    <div class="field">
       By clicking Save the current newsletter will be sent to subscribers, this could take some time, please be patience.
       </div>
   <%= render :partial => "/shared/admin/form_actions",

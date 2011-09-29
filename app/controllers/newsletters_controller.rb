@@ -24,7 +24,7 @@ class NewslettersController < ApplicationController
 protected
 
   def find_all_newsletters
-    @newsletters = Newsletter.find(:all, :order => "position ASC")
+    @newsletters = Newsletter.order("created_at DESC").where(:draft => false)
   end
 
   def find_page
